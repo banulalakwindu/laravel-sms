@@ -31,7 +31,7 @@ final class TextLkSmsProvider implements SmsProviderInterface
     private function normalizeSriLankanNumber(string $raw): ?string
     {
         // Strip all whitespace and dashes
-        $cleaned = preg_replace('/[\s\-]/', '', $raw) ?? '';
+        $cleaned = (string) preg_replace('/[\s\-]/', '', $raw);
 
         // Strip leading '+'
         $cleaned = mb_ltrim($cleaned, '+');
