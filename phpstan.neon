@@ -1,0 +1,26 @@
+parameters:
+    level: max
+    paths:
+        - src
+    bootstrapFiles:
+        - vendor/autoload.php
+    reportUnmatchedIgnoredErrors: false
+    ignoreErrors:
+        -
+            identifier: missingType.iterableValue
+            path: src/Providers/TextLk/TextLkSmsProvider.php
+        -
+            identifier: cast.string
+            path: src/Providers/TextLk/TextLkSmsProvider.php
+        -
+            identifier: cast.double
+            path: src/Providers/TextLk/TextLkSmsProvider.php
+        -
+            identifier: offsetAccess.nonOffsetAccessible
+            path: src/Providers/TextLk/TextLkSmsProvider.php
+        -
+            identifier: argument.type
+            path: src/SmsServiceProvider.php
+        -
+            identifier: cast.string
+            path: src/SmsServiceProvider.php
