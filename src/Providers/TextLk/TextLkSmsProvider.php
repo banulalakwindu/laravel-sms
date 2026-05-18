@@ -34,15 +34,15 @@ final class TextLkSmsProvider implements SmsProviderInterface
         $cleaned = (string) preg_replace('/[\s\-]/', '', $raw);
 
         // Strip leading '+'
-        $cleaned = mb_ltrim($cleaned, '+');
+        $cleaned = ltrim($cleaned, '+');
 
         // Strip single leading zero → add 94 prefix
         if (str_starts_with($cleaned, '0')) {
-            $cleaned = '94' . mb_substr($cleaned, 1);
+            $cleaned = '94' . substr($cleaned, 1);
         }
 
         // Bare 9-digit local number (no country code, no leading zero)
-        if (mb_strlen($cleaned) === 9 && ! str_starts_with($cleaned, '94')) {
+        if (strlen($cleaned) === 9 && ! str_starts_with($cleaned, '94')) {
             $cleaned = '94' . $cleaned;
         }
 
